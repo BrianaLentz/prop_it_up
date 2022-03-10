@@ -1,27 +1,29 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-class PersonCard extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
+// class PersonCard extends Component{
+//     constructor(props){
+//         super(props);
+//         this.state = {
             
-            count: this.props.age
-        }
-    }
+//             count: this.props.age
+//         }
+//     }
     // ageCount = (e) => {
     //     const count = this.state.count
     //     this.setState(prev => ({age: prev.count + 1 }));
     // }
-    render(){
-        const {lastName, firstName, age, hairColor} = this.props
+    // render(){
+    //     const {lastName, firstName, age, hairColor} = this.props
+const PersonCard = props => {
         return(
             <div>
-                <h1>{lastName}, {firstName}</h1>
-                <p>Age: {this.state.count}</p>
-                <p>Hair Color: {hairColor}</p>
-                <button onClick={()=> this.setState({count: this.state.count+1})}>Birthday Button for {firstName} {lastName}</button>
+                <h1>{props.lastName}, {props.firstName}</h1>
+                <p>Age: {props.age}</p>
+                <p>Hair Color: {props.hairColor}</p>
             </div>
-        )
-    }
-}
+        );
+        }
+
+
+
 export default PersonCard;
